@@ -8,7 +8,8 @@ captive portal bypass based on iptables
 ```
 ssh root@10.0.0.1
 ```
-* save the script to nano /etc/allow.sh
+* save the script
+> nano /etc/allow.sh
 ```
 #!/bin/bash
 
