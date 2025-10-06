@@ -25,8 +25,18 @@ iptables -I FORWARD 2 -d "$IP" -j ACCEPT
 
 iptables -t mangle -I POSTROUTING 1 -d "$IP" -o "$IFACE -j RETURN
 ````
-* run the script permanently
+* run
+```
+bash /etc/allow.sh
+```
+* run the script permanently 
 > nano /etc/crontab or crontab -e
 ```
 @reboot /etc/allow.sh
 ```
+* check if working
+```
+iptables -S
+iptables -t mangle -S
+```
+
