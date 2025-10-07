@@ -1,5 +1,4 @@
-# captive-portal-bypass
-captive portal bypass based on iptables 
+# Device exemption from captive portal iptables rule sets
 
 # setup
 * take note your ip, mac and output interface
