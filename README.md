@@ -1,4 +1,9 @@
 # Device exemption from captive portal iptables rule sets
+* Goals
+  - IOT devices
+  - CCTV's Surveillance
+  - Home assistant
+  - VIP Users
 
 # setup
 * take note your ip, mac and output interface
