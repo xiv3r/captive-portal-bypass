@@ -1,11 +1,11 @@
-# Device exemption from captive portal iptables rule sets
+# Exempt a device from captive portal iptables rule sets
 * Goals
   - IOT devices
   - CCTV's Surveillance
   - Home assistant
   - VIP Users
 
-# setup
+# Setup
 * take note your ip, mac and output interface
 * use a static ip and device mac in the wifi settings
 * this must be place into the wifi machine
@@ -21,11 +21,11 @@ IP="10.0.8.141"
 MAC="20:31:1C:E0:DE:27"
 IFACE="eth0.22"
 
-iptables -t mangle -I PREROUTING 1 -s "$IP" -j MARK --set-xmark 0x50/0xffffffff
-iptables -t mangle -I PREROUTING 2 -s "$IP" -j RETURN
+iptables -t mangle -A PREROUTING -s "$IP" -j MARK --set-xmark 0x50/0xffffffff
+iptables -t mangle -A PREROUTING -s "$IP" -j RETURN
 
-iptables -I FORWARD 1 -m mac --mac-source "$MAC"  -j ACCEPT
-iptables -I FORWARD 2 -d "$IP" -j ACCEPT
+iptables -A FORWARD -m mac --mac-source "$MAC"  -j ACCEPT
+iptables -A FORWARD -d "$IP" -j ACCEPT
 
 iptables -t mangle -I POSTROUTING 1 -d "$IP" -o "$IFACE -j RETURN
 ````
