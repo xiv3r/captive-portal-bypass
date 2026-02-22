@@ -8,7 +8,7 @@
 # Setup
 * take note your ip, mac and output interface
 * use a static ip and device mac in the wifi settings
-* this must be place into the wifi machine
+* this must be place into the AP wifi machine system
 ```
 ssh root@10.0.0.1
 ```
